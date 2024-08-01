@@ -1,0 +1,80 @@
+.temp {
+  background-color: rgb(10, 2, 61);
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: whitesmoke;
+  padding: 100px;
+  color: black;
+}
+.repocontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: rgb(10, 2, 61);
+}
+.repocontainer a {
+  text-decoration: none;
+  color: rgb(7, 1, 46);
+}
+.repocard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  box-shadow: 2px 2px 15px rgba(10, 2, 61, 0.164);
+  height: 150px;
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 3px;
+  transition: 0.5s all ease-in-out;
+}
+.repocard:hover {
+  transform: scale(1.1);
+}
+.repodetail {
+  display: flex;
+  justify-content: space-between;
+}
+.reponame {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.reponame p {
+  font-size: 18px;
+}
+.reponame p i {
+  padding: 5px;
+}
+.repodetail {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.repodetail div {
+  display: flex;
+}
+.repodetail div span {
+  padding: 0 10px;
+}
+.reposize {
+  display: flex;
+}
+
+@media (max-width: 500px) {
+  .repocard {
+    margin: 20px 0;
+  }
+  .repocard:hover {
+    transform: none;
+  }
+  .temp {
+    text-align: center;
+    padding: 70px 30px;
+  }
+}

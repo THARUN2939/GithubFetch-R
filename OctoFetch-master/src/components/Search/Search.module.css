@@ -1,0 +1,36 @@
+.container {
+  min-height: 60vh;
+  margin: 0;
+  background-color: rgb(10, 2, 61);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  display: flex;
+  padding: 50px 0;
+  flex-direction: column;
+}
+form label {
+  font-size: 24px;
+}
+form input[type="text"] {
+  height: 40px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: rgb(240, 240, 240);
+}
+form input {
+  margin: 10px 0;
+}
+form input[type="submit"] {
+  padding: 15px 30px;
+  border-radius: 10px;
+  background: rgb(20, 74, 252);
+  border: none;
+  outline: none;
+  color: white;
+}
