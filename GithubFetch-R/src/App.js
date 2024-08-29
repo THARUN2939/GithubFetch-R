@@ -13,7 +13,7 @@ class App extends Component {
   };
   async componentDidMount() {
     const requestsRemaining = await fetchRemainingRequests();
-    const fetchedData = await fetchData("example");
+    const fetchedData = await fetchData("Tharoff2939");
     this.setState({request: requestsRemaining}, () => console.log(this.state.request));
     this.setState({ data: fetchedData });
   }

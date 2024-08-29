@@ -5,7 +5,7 @@ const Repos = ({ repos, username }) => {
   console.log(repos);
   if (!repos) {
     return <div>{console.log("No repos are Present")}</div>;
-  } else if (username === "example") {
+  } else if (username === "Tharoff2939") {
     return (
       <div className={styles.temp}>
         Enter the Username to view the Repositories!

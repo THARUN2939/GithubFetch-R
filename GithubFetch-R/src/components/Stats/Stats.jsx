@@ -5,7 +5,7 @@ const Stats = ({ data }) => {
   if (data.message !== "404") {
     const a = new Date(data.created).toDateString().split(" ");
     console.log(`Name of the user: ${data.username}`);
-    if (data.username === "example") var condition = true;
+    if (data.username === "Tharoff2939") var condition = true;
     return (
       <div className={styles.container}>
         <img src={data.avatar} alt={data.username} />
