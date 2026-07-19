@@ -1,47 +1,123 @@
 # GithubFetch-R
 
-A small web project to fetch and display GitHub repository data.
+![Project screenshot](assets/screenshot-1.png)
+
+A small web project to fetch and display GitHub repository data in the browser.
 
 ## Overview
 
-This repository contains a front-end application (HTML/CSS/JavaScript) that fetches repository information from the GitHub API and displays it in the browser.
+GithubFetch-R is a front-end application (HTML, CSS, JavaScript) that queries the GitHub REST API to fetch repository metadata and presents it in a clean, responsive UI.
+
+## Demo screenshot
+
+Include screenshots in the `assets/` directory and reference them from this README. Example files to add:
+
+- assets/screenshot-1.png — main app view (recommended size: 1200×700)
+- assets/screenshot-2.png — mobile/tablet view (recommended size: 600×800)
+
+Add images to the repository and they will render here as:
+
+![App screenshot](assets/screenshot-1.png)
 
 ## Features
 
-- Fetch repository data using the GitHub REST API
-- Display repository details in a clean UI
-- Responsive layout built with CSS
+- Fetch repository details (name, description, stars, forks, language, last updated)
+- Search for repositories by owner/name
+- Responsive layout suitable for desktop and mobile
 
 ## Technologies
 
-- JavaScript
+- JavaScript (vanilla)
 - HTML
 - CSS
 
-## Installation
+## Exact wording for the project description (use this on project page)
+
+"GithubFetch-R is a lightweight front-end tool that makes it easy to fetch and visualize GitHub repository metadata using the GitHub REST API. It requires no back-end and works entirely in the browser for public repositories."
+
+## Installation (exact commands)
 
 1. Clone the repository:
 
    git clone https://github.com/THARUN2939/GithubFetch-R.git
+   cd GithubFetch-R
 
-2. Open the project in your browser. If the project uses a development server, run one (e.g., using VS Code Live Server or a simple HTTP server):
+2. Start a local static server (choose one):
 
-   npx http-server
+- Using Node (http-server):
 
-## Usage
+  npm install --global http-server
+  http-server -c-1
 
-- Open `index.html` in your browser (or run a local server) to use the app.
-- The application will fetch data from the GitHub API — no extra configuration required for public repositories.
+- Using npx (no global install):
 
-## Development
+  npx http-server -c-1
 
-- Edit the JavaScript files in the project to change fetch behavior or UI.
-- Use your browser's developer tools to debug network requests and front-end issues.
+- Using Python 3:
+
+  python3 -m http.server 8000
+
+- Using VS Code Live Server: Open the folder in VS Code and click "Go Live" (Live Server extension required).
+
+Then open your browser at http://localhost:8080 (http-server default) or http://localhost:8000 (Python default).
+
+## Running in development
+
+- Edit the files in the repository (index.html, styles.css, src/*.js).
+- Use your browser devtools (Console & Network) to inspect API calls and debug.
+
+## GitHub API and authentication (optional)
+
+- For public repository reads, no authentication is required.
+- To increase API rate limits or access private repos, create a GitHub Personal Access Token (PAT) and configure the client to send it in the Authorization header.
+
+Example (browser fetch with a token stored in an environment variable when serving from a development server):
+
+```js
+// WARNING: Never commit secrets to the repo. Use environment variables or a secure server.
+const headers = {};
+if (process.env.GITHUB_TOKEN) {
+  headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+}
+fetch('https://api.github.com/repos/owner/repo', { headers })
+  .then(res => res.json())
+  .then(data => console.log(data));
+```
+
+If you prefer a simple local approach, run a small proxy server that injects the token into requests so the token is never checked into source control.
+
+## Screenshots — exact wording and captions
+
+- "Main view showing repository details and summary" — use as caption for `assets/screenshot-1.png`.
+- "Mobile view" — caption for `assets/screenshot-2.png`.
+
+To include a screenshot in the README, add the file to `assets/` and keep the relative path; GitHub will render it automatically.
 
 ## Contributing
 
-Contributions are welcome. Feel free to open issues or submit pull requests.
+Contributions are welcome. To contribute:
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feat/your-feature`.
+3. Commit your changes: `git commit -am 'Add some feature'`.
+4. Push to your branch: `git push origin feat/your-feature`.
+5. Open a Pull Request describing your changes.
+
+## Suggested images to include (exact filenames)
+
+- assets/screenshot-1.png — desktop main view
+- assets/screenshot-2.png — mobile responsive view
+- assets/flow-diagram.png — optional, shows request flow (client → GitHub API → client)
+
+Recommended alt text for accessibility:
+
+- "GithubFetch-R main app screenshot"
+- "GithubFetch-R mobile screenshot"
 
 ## License
 
-This project does not include a license file. Add one if you want to explicitly grant permissions.
+Add a LICENSE file to explicitly choose a license (e.g., MIT). If you want, I can add an MIT license file for you.
+
+## Contact
+
+Created by Tharun Ravuru — https://github.com/THARUN2939
