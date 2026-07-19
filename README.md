@@ -114,9 +114,7 @@ Recommended alt text for accessibility:
 - "GithubFetch-R main app screenshot"
 - "GithubFetch-R mobile screenshot"
 
-## License
 
-Add a LICENSE file to explicitly choose a license (e.g., MIT). If you want, I can add an MIT license file for you.
 
 ## Contact
 
